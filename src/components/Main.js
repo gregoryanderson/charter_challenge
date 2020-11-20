@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { AppContext } from "../AppContext";
+import Pagination from "./Pagination";
 import SearchFilter from "./SearchFilter";
 import Table from "./Table.js";
 
@@ -38,6 +39,7 @@ const Main = () => {
         <div className="App">
           <SearchFilter />
           <Table />
+          <Pagination />
         </div>
       ) : (
         <p>Hold on one moment..</p>

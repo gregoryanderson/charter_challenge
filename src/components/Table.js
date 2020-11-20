@@ -5,6 +5,13 @@ import { AppContext } from "../AppContext";
 const Table = () => {
   const [state, setState] = useContext(AppContext);
 
+  const paginateRestaurants = (sortedRestaurants) => {
+    return sortedRestaurants.slice(
+      (state.currentPage - 1) * state.perPage,
+      state.currentPage * state.perPage
+    );
+  };
+
   const sortRestaurants = (sortableRestaurants) => {
     return sortableRestaurants.sort(function (a, b) {
       var nameA = a.name.toUpperCase();
@@ -22,8 +29,9 @@ const Table = () => {
   const displayRows = (selectedRestaurants) => {
     if (state.restaurants) {
       const sortedRestaurants = sortRestaurants(selectedRestaurants);
-      if (sortedRestaurants.length) {
-        return sortedRestaurants.map((restaurant) => {
+      const paginatedRestaurants = paginateRestaurants(sortedRestaurants);
+      if (paginatedRestaurants.length) {
+        return paginatedRestaurants.map((restaurant) => {
           return (
             <TableRow
               name={restaurant.name}
