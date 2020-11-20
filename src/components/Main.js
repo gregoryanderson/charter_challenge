@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { AppContext } from "../AppContext";
 import Pagination from "./Pagination";
 import SearchFilter from "./SearchFilter";
+import OptionsFilter from "./OptionsFilter";
 import Table from "./Table.js";
 
 const Main = () => {
@@ -38,6 +39,7 @@ const Main = () => {
       {state ? (
         <div className="App">
           <SearchFilter />
+          <OptionsFilter />
           <Table />
           <Pagination />
         </div>
