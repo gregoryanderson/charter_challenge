@@ -11,11 +11,13 @@ const SearchFilter = () => {
         const upCaseResState = res.state.toUpperCase();
         const upCaseResGenres = res.genre.toUpperCase();
         const upCaseResAddress = res.address1.toUpperCase();
+        const upCaseResCity = res.city.toUpperCase();
         if (
           upCaseResName.includes(inputValue) ||
           upCaseResState.includes(inputValue) ||
           upCaseResGenres.includes(inputValue) ||
-          upCaseResAddress.includes(inputValue) 
+          upCaseResAddress.includes(inputValue) ||
+          upCaseResCity.includes(inputValue)
         ) {
           return res;
         }

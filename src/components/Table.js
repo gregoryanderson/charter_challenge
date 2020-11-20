@@ -13,7 +13,6 @@ const Table = () => {
   };
 
   const sortRestaurants = (sortableRestaurants) => {
-    console.log({ sortableRestaurants });
     return sortableRestaurants.sort(function (a, b) {
       var nameA = a.name.toUpperCase();
       var nameB = b.name.toUpperCase();
@@ -28,7 +27,6 @@ const Table = () => {
   };
 
   const displayRows = (selectedRestaurants) => {
-    console.log({ selectedRestaurants });
     if (state.restaurants) {
       const sortedRestaurants = sortRestaurants(selectedRestaurants);
       const paginatedRestaurants = paginateRestaurants(sortedRestaurants);
@@ -57,7 +55,6 @@ const Table = () => {
     }
   };
 
-  console.log({ state });
   return (
     <table>
       <tr>
