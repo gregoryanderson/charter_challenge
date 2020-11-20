@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { AppContext } from "../AppContext";
+import SearchFilter from "./SearchFilter";
 import Table from "./Table.js";
 
 const Main = () => {
@@ -35,6 +36,7 @@ const Main = () => {
     <>
       {state ? (
         <div className="App">
+          <SearchFilter />
           <Table />
         </div>
       ) : (
