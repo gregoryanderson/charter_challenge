@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { AppContext } from "../AppContext";
+import Table from "./Table.js";
 
 const Main = () => {
   const [state, setState] = useContext(AppContext);
@@ -32,7 +33,13 @@ const Main = () => {
 
   return (
     <>
-      <p>Hold on one moment...</p>
+      {state ? (
+        <div className="App">
+          <Table />
+        </div>
+      ) : (
+        <p>Hold on one moment..</p>
+      )}
     </>
   );
 };
